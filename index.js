@@ -27,7 +27,7 @@ app.get('/users/:id', async function(req, res) {
   else res.send(user);
 });
 
-app.post('/users', async function(req, res) {
+app.post('/user', async function(req, res) {
   db.get('users').push({ id: shortid.generate(), ...req.body }).write();
   res.send(db.get('users').value());
 });
